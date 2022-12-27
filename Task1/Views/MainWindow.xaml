@@ -1,0 +1,70 @@
+﻿<Window x:Class="Task1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Task1"
+        xmlns:vm="clr-namespace:Task1.ViewModels"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="400" Width="400"  MinHeight="350" MinWidth="300">
+
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="FontSize" Value="25"/>
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="Margin" Value="2,2,2,2"/>
+            <Setter Property="BorderThickness" Value="1,1,3,3"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border CornerRadius="20" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true">
+                            <ContentPresenter Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Window.DataContext>
+        <vm:MainWindowViewModel/>
+    </Window.DataContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Border BorderThickness="5,5,2,2" BorderBrush="Gray" Background="MintCream" Padding="5,0,5,0" Margin="2,10,2,5" CornerRadius="10">
+            <TextBlock TextAlignment="Right" Text="{Binding Path= Result}" FontSize="40"  VerticalAlignment="Bottom" Padding="0,0,0,5"/>
+        </Border>
+
+        <UniformGrid Grid.Row="1"  Rows="6" Columns="4"  Margin="0,0,0,10">
+            <Button Background="LightGray" Content="%" Command="{Binding Path=EqProcCommand}"/>
+            <Button Background="#FFB3FF5D" Content="CE" Command="{Binding Path=StartCommand}"/>
+            <Button Background="#FFFFB4AA" Content="OFF" Command="{Binding Path=OffCommand}"/>
+            <Button Background="LightGray" Content="⇐" Command="{Binding Path=BackCommand}"/>
+            <Button Background="LightGray" Content="1/x" Command="{Binding Path=OneDivCommand}"/>
+            <Button Background="LightGray" Content="x²" Command="{Binding Path=SquarCommand}"/>
+            <Button Background="LightGray" Content="√x" Command="{Binding Path=SqrtCommand}"/>
+            <Button Background="LightGray" Content="÷" Command="{Binding Path=DivCommand}"/>
+            <Button Content="7" Background="White" Command="{Binding Path=AddSevenFigureCommand}"/>
+            <Button Content="8" Background="White" Command="{Binding Path=AddEightFigureCommand}"/>
+            <Button Content="9" Background="White" Command="{Binding Path=AddNineFigureCommand}"/>
+            <Button Content="x" Background="LightGray" Command="{Binding Path=MultCommand}"/>
+            <Button Content="4" Background="White" Command="{Binding Path=AddFourFigureCommand}"/>
+            <Button Content="5" Background="White" Command="{Binding Path=AddFiveFigureCommand}"/>
+            <Button Content="6" Background="White" Command="{Binding Path=AddSixFigureCommand}"/>
+            <Button Content="-" Background="LightGray" Command="{Binding Path=MinusCommand}"/>
+            <Button Content="1" Background="White" Command="{Binding Path=AddOneFigureCommand}"/>
+            <Button Content="2" Background="White" Command="{Binding Path=AddTwoFigureCommand}"/>
+            <Button Content="3" Background="White" Command="{Binding Path=AddThreeFigureCommand}"/>
+            <Button Content="+" Background="LightGray" Command="{Binding Path=PlusCommand}"/>
+            <Button Content="+/-" Background="White" Command="{Binding Path=SignCommand}"/>
+            <Button Content="0" Background="White" Command="{Binding Path=AddZeroFigureCommand}"/>
+            <Button Content="," Background="White" Command="{Binding Path=AddDotFigureCommand}"/>
+            <Button Content="=" Background="LightGray" Command="{Binding Path=EqCommand}"/>
+        </UniformGrid>
+    </Grid>
+</Window>
