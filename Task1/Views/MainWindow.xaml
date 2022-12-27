@@ -17,8 +17,17 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
-                        <Border CornerRadius="20" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true">
-                            <ContentPresenter Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        <Border CornerRadius="20" 
+                                BorderBrush="{TemplateBinding BorderBrush}" 
+                                BorderThickness="{TemplateBinding BorderThickness}" 
+                                Background="{TemplateBinding Background}" 
+                                SnapsToDevicePixels="true">
+                            <ContentPresenter Focusable="False" 
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                              Margin="{TemplateBinding Padding}" 
+                                              RecognizesAccessKey="True" 
+                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
                         </Border>
                     </ControlTemplate>
                 </Setter.Value>
@@ -36,8 +45,17 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <Border BorderThickness="5,5,2,2" BorderBrush="Gray" Background="MintCream" Padding="5,0,5,0" Margin="2,10,2,5" CornerRadius="10">
-            <TextBlock TextAlignment="Right" Text="{Binding Path= Result}" FontSize="40"  VerticalAlignment="Bottom" Padding="0,0,0,5"/>
+        <Border BorderThickness="5,5,2,2" 
+                BorderBrush="Gray" 
+                Background="MintCream" 
+                Padding="5,0,5,0" 
+                Margin="2,10,2,5" 
+                CornerRadius="10">
+            <TextBlock TextAlignment="Right" 
+                       Text="{Binding Path= Result}" 
+                       FontSize="40"  
+                       VerticalAlignment="Bottom" 
+                       Padding="0,0,0,5"/>
         </Border>
 
         <UniformGrid Grid.Row="1"  Rows="6" Columns="4"  Margin="0,0,0,10">

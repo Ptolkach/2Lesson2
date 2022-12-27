@@ -43,7 +43,8 @@ namespace Task1.ViewModels
         private void OnPlusCommandExecute(object p)
         {
             oper = "+";
-            firstValue = Convert.ToDouble(Result);
+            if (Result !="")
+                firstValue = Convert.ToDouble(Result);
             Result = "";
         }
 
@@ -62,7 +63,8 @@ namespace Task1.ViewModels
         private void OnMinusCommandExecute(object p)
         {
             oper = "-";
-            firstValue = Convert.ToDouble(Result);
+            if (Result != "")
+                firstValue = Convert.ToDouble(Result);
             Result = "";
         }
 
@@ -80,7 +82,8 @@ namespace Task1.ViewModels
         private void OnMultCommandExecute(object p)
         {
             oper = "*";
-            firstValue = Convert.ToDouble(Result);
+            if (Result != "")
+                firstValue = Convert.ToDouble(Result);
             Result = "";
         }
 
@@ -98,7 +101,8 @@ namespace Task1.ViewModels
         private void OnDivCommandExecute(object p)
         {
             oper = "/";
-            firstValue = Convert.ToDouble(Result);
+            if (Result != "")
+                firstValue = Convert.ToDouble(Result);
             Result = "";
         }
 
@@ -116,7 +120,8 @@ namespace Task1.ViewModels
         private void OnSignCommandExecute(object p)
         {
             oper = "+-";
-            firstValue = Convert.ToDouble(Result);
+            if (Result != "")
+                firstValue = Convert.ToDouble(Result);
             Result = Convert.ToString(firstValue*(-1));
         }
 
@@ -134,7 +139,8 @@ namespace Task1.ViewModels
         private void OnOneDivCommandExecute(object p)
         {
             oper = "1/x";
-            firstValue = Convert.ToDouble(Result);
+            if (Result != "")
+                firstValue = Convert.ToDouble(Result);
             Result = Convert.ToString(1/firstValue);
         }
 
@@ -170,7 +176,8 @@ namespace Task1.ViewModels
         private void OnSqrtCommandExecute(object p)
         {
             oper = "√x";
-            firstValue = Convert.ToDouble(Result);
+            if (Result != "")
+                firstValue = Convert.ToDouble(Result);
             Result = Convert.ToString(Math.Sqrt(firstValue));
         }
 
@@ -188,7 +195,8 @@ namespace Task1.ViewModels
         public ICommand EqCommand { get; }
         private void OnEqCommandExecute(object p)
         {
-            secondValue = Convert.ToDouble(Result);
+            if (Result!="")
+                secondValue = Convert.ToDouble(Result);
             Result = Convert.ToString(Figure.Operation(firstValue,secondValue,oper));
             oper = "";
         }
@@ -206,7 +214,8 @@ namespace Task1.ViewModels
         public ICommand EqProcCommand { get; }
         private void OnEqProcCommandExecute(object p)
         {
-            secondValue = Convert.ToDouble(Result);
+            if (Result != "")
+                secondValue = Convert.ToDouble(Result);
             Result = Convert.ToString(Figure.OperationProc(firstValue, secondValue, oper));
             oper = "";
         }
